@@ -1,37 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Go_ESIM 🌍</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Go_ESIM 🌍 — Internet in 1 Minute</title>
+
+  <!-- Basic SEO -->
+  <meta name="description" content="Go_ESIM — buy and install eSIM in 1 minute. Works in 200+ countries.">
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Social Preview (uses your existing og_image.png in the repo) -->
+  <meta property="og:title" content="Go_ESIM 🌍 — Internet in 1 Minute">
+  <meta property="og:description" content="Buy and install eSIM in 1 minute. 200+ countries.">
+  <meta property="og:image" content="og_image.png">
+  <meta property="og:type" content="website">
+
+  <!-- One-file CSS -->
+  <style>
+    :root{
+      --bg:#0f1216;
+      --ink:#e7eef7;
+      --muted:#a5b5c8;
+      --card:#151a21;
+      --line:#202833;
+      --brand:#00c853;
+      --brand-hover:#00a344;
+      --link:#61dafb;
+      --maxw:980px;
+      --radius:14px;
+      --shadow:0 8px 26px rgba(0,0,0,.22);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
+      color:var(--ink);
+      background:var(--bg);
+    }
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+    /* ---------- HERO ---------- */
+    .hero{
+      position:relative; overflow:hidden;
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(1200px 600px at 80% -20%, rgba(0,200,83,.15), transparent 60%),
+        radial-gradient(1000px 500px at -10% -10%, rgba(97,218,251,.12), transparent 55%),
+        linear-gradient(180deg, #121721 0%, transparent 60%);
+    }
+    .hero-inner{padding:56px 0 34px; text-align:center}
+    .logo{
+      width:72px; height:72px; border-radius:50%;
+      background:#0c1015 url('favicon.ico') center/60% no-repeat;
+      border:1px solid var(--line); box-shadow:var(--shadow);
+      margin:0 auto 14px;
+    }
+    h1{margin:6px 0 8px; font-size:40px; letter-spacing:.2px}
+    .tagline{margin:0 0 18px; color:var(--muted)}
+    .btn{
+      display:inline-block; border:0; border-radius:12px;
+      padding:14px 26px; font-weight:700; color:#fff;
+      background:var(--brand); box-shadow:0 12px 28px rgba(0,200,83,.18);
+      transition:.15s ease-in-out; text-decoration:none;
+    }
+    .btn:hover{background:var(--brand-hover); transform:translateY(-1px)}
+    .btn-outline{
+      background:transparent; color:var(--ink); border:1px solid var(--line);
+      box-shadow:none; margin-left:10px;
+    }
+    .btn-outline:hover{border-color:#2a3442}
+
+    /* ---------- SECTIONS ---------- */
+    main{padding:34px 0 64px}
+    .card{
+      background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+      padding:22px 22px; margin:18px 0; box-shadow:var(--shadow);
+    }
+    h2{margin:0 0 12px; font-size:22px}
+    ol{margin:0 0 12px; padding-left:20px}
+    ul{margin:0; padding-left:20px}
+    .columns{columns:2; column-gap:28px}
+    @media (max-width:760px){ .columns{columns:1} }
+
+    /* ---------- FAQ ---------- */
+    details{background:#121821; border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin:10px 0}
+    details[open]{background:#131b24}
+    summary{cursor:pointer; font-weight:600; list-style:none}
+    summary::-webkit-details-marker{display:none}
+
+    /* ---------- FOOTER ---------- */
+    footer{border-top:1px solid var(--line); color:var(--muted); text-align:center; padding:22px 0}
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Go_ESIM 🌍</h1>
-    <p>Internet in 1 Minute | Интернет за 1 минуту</p>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <!-- put your own logo instead of favicon.ico if you want -->
+      <div class="logo" aria-hidden="true"></div>
+      <h1>Go_ESIM 🌍</h1>
+      <p class="tagline">Internet in 1 Minute | Интернет за 1 минуту</p>
+      <div>
+        <a class="btn" href="https://www.simoptions.com/?utm_medium=wpam_id_866" target="_blank" rel="noopener">Buy eSIM</a>
+        <a class="btn btn-outline" href="https://t.me/Go_ESIM" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <!-- What is eSIM -->
+    <section class="card">
       <h2>❓ What is eSIM?</h2>
-      <p>🇬🇧 eSIM is a virtual SIM card — no plastic, installs in 1 minute, works in 200+ countries.<br>
-         🇷🇺 eSIM — виртуальная SIM-карта. Без пластика, установка за 1 минуту, работает в 200+ странах.</p>
+      <p>
+        🇬🇧 eSIM is a virtual SIM card — no plastic, installs in 1 minute, works in 200+ countries.<br>
+        🇷🇺 eSIM — виртуальная SIM-карта. Без пластика, установка за 1 минуту, работает в 200+ странах.
+      </p>
     </section>
 
-    <section>
+    <!-- How to Buy -->
+    <section class="card">
       <h2>🛒 How to Buy</h2>
       <ol>
         <li>Choose country & plan | Выбери страну и тариф</li>
         <li>Pay online 💳 | Оплати онлайн 💳</li>
         <li>Receive QR by email ✉️ | Получи QR на почту ✉️</li>
       </ol>
-      <a class="button" href="https://www.simoptions.com/?utm_medium=wpam_id_866" target="_blank">Buy eSIM</a>
+      <a class="btn" href="https://www.simoptions.com/?utm_medium=wpam_id_866" target="_blank" rel="noopener">Buy eSIM</a>
     </section>
 
-    <section>
+    <!-- Supported Phones -->
+    <section class="card">
       <h2>📱 Supported Phones</h2>
-      <ul>
+      <ul class="columns">
         <li>iPhone XS and newer</li>
         <li>Samsung Galaxy S20+, Z Flip/Fold, Note 20+</li>
         <li>Google Pixel 3+</li>
@@ -39,14 +140,42 @@
       </ul>
     </section>
 
-    <section>
+    <!-- Channels -->
+    <section class="card">
       <h2>🔗 Channels & Communities</h2>
-      <p>👉 <a href="https://t.me/Go_ESIM">Telegram: Go_ESIM</a></p>
+      <p>👉 <a href="https://t.me/Go_ESIM" target="_blank" rel="noopener">Telegram: Go_ESIM</a></p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="card">
+      <h2>💬 FAQ</h2>
+
+      <details>
+        <summary>How do I install an eSIM?</summary>
+        <p>After purchase you’ll receive a QR to email. On the phone: Settings → Mobile/Cellular → Add eSIM → Scan QR → Done.</p>
+      </details>
+
+      <details>
+        <summary>Can I keep my WhatsApp number?</summary>
+        <p>Yes. eSIM adds data without changing your WhatsApp number. Keep your physical SIM for calls/SMS if needed.</p>
+      </details>
+
+      <details>
+        <summary>When should I activate it?</summary>
+        <p>Install anytime, but switch it on the day you travel (or when you need data) to start the plan period.</p>
+      </details>
+
+      <details>
+        <summary>Refunds / doesn’t work?</summary>
+        <p>If data doesn’t start, restart the phone and enable data roaming for the new eSIM. Still no luck — contact support of the store from your receipt.</p>
+      </details>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Go_ESIM. All rights reserved.</p>
+    <div class="container">
+      <p>© 2025 Go_ESIM. All rights reserved.</p>
+    </div>
   </footer>
 </body>
 </html>
