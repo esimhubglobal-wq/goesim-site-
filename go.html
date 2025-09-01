@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <script>
+    const map = {
+      simoptions: "https://www.simoptions.com/?utm_medium=wpam_id_866",
+      airalo: "https://www.airalo.com/",
+      nomad: "https://www.getnomad.app/"
+    };
+    const url = new URL(window.location.href);
+    const to = url.searchParams.get("to") || "simoptions";
+    const target = map[to] || map["simoptions"];
+    window.location.href = target + "&" + url.searchParams.toString();
+  </script>
+</head>
+<body>
+  <p>Redirecting to partner site...</p>
+</body>
+</html>
