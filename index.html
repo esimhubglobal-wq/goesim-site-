@@ -1,148 +1,193 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Go_ESIM 🌍 Интернет без роуминга</title>
+  <meta name="description" content="Купить eSIM онлайн. Интернет без роуминга в 200+ странах. Установка за 1 минуту. Совместимо с iPhone, Samsung, Pixel." />
+  <link rel="icon" href="favicon.ico" />
+  <meta property="og:title" content="Go_ESIM — eSIM за 1 минуту">
+  <meta property="og:description" content="Купи eSIM, подключай интернет без роуминга в 200+ странах.">
+  <meta property="og:image" content="og_image.png">
 
-  <!-- SEO -->
-  <meta name="description" content="Купить eSIM онлайн 🌍 Интернет без роуминга в 200+ странах. Подходит для туристов и digital nomads. Установка за 1 минуту.">
-
-  <!-- OG -->
-  <meta property="og:title" content="Go_ESIM 🌍 Интернет без роуминга">
-  <meta property="og:description" content="Купить eSIM онлайн для путешествий в 200+ странах. Быстрая установка, без пластика.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="favicon.ico">
-
-  <link rel="icon" href="favicon.ico">
-  
   <style>
-    body { font-family: Arial, sans-serif; background: #0f1216; color: #e7eef7; margin: 0; padding: 0; text-align: center; }
-    header { background: #151a21; padding: 20px; border-bottom: 1px solid #202833; }
-    header h1 { margin: 0; font-size: 24px; }
-    nav { margin: 15px 0; }
-    nav a { color: #61dafb; margin: 0 10px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    .lang-switch { display: inline-block; margin-left: 20px; }
-    .chip { padding: 6px 12px; border: 1px solid #202833; border-radius: 6px; cursor: pointer; margin: 0 4px; }
-    .chip.active { background: #1c232f; }
-    .card { background: #151a21; margin: 20px auto; padding: 20px; border-radius: 10px; max-width: 700px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: left; }
-    h2 { color: #00c853; }
-    .btn { display: inline-block; padding: 12px 20px; margin-top: 15px; background: #00c853; color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; }
-    .btn:hover { background: #00a344; }
-    footer { margin: 40px 0 20px; color: #a5b5c8; font-size: 14px; }
+    :root{
+      --bg:#0f1216; --ink:#e7eef7; --muted:#a5b5c8; --card:#151a21; --line:#202833;
+      --brand:#00c853; --brand-hover:#00a344; --link:#61dafb;
+      --maxw:980px; --radius:14px; --shadow:0 8px 26px rgba(0,0,0,.22);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto;color:var(--ink);background:var(--bg)}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+
+    /* topbar: только TG + язык */
+    .topbar{position:sticky;top:0;z-index:10;background:rgba(15,18,22,.75);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+    .top-inner{display:flex;justify-content:flex-end;align-items:center;gap:12px;padding:10px 0}
+    .chip{padding:6px 10px;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+    .chip.active{background:#1a222d}
+
+    /* HERO как раньше */
+    .hero{
+      position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(1200px 600px at 80% -20%, rgba(0,200,83,.12), transparent 60%),
+        radial-gradient(1000px 500px at -10% -20%, rgba(97,218,251,.10), transparent 60%),
+        linear-gradient(180deg,#121721 0%,#0f1216 60%);
+    }
+    .hero-inner{padding:64px 0 40px;text-align:center}
+    .logo{width:88px;height:88px;border-radius:18px;background:#0c1015 url('favicon.ico') center/54px no-repeat;
+          border:1px solid var(--line);box-shadow:var(--shadow);margin:0 auto 16px}
+    h1{margin:6px 0 10px;font-size:42px}
+    .tagline{margin:0 0 22px;color:var(--muted);font-size:18px}
+    .btn{display:inline-block;padding:14px 26px;font-weight:700;border-radius:12px;border:0;
+         color:#04140a;background:var(--brand);box-shadow:var(--shadow);transition:.15s}
+    .btn:hover{background:var(--brand-hover);text-decoration:none}
+    .btn-outline{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none;margin-left:10px}
+    .btn-outline:hover{border-color:#2a3442}
+
+    /* секции */
+    main{padding:34px 0 64px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+          padding:22px;margin:18px 0;box-shadow:var(--shadow)}
+    h2{margin:0 0 12px;font-size:22px}
+    ul{margin:0;padding-left:20px}
+    details{background:#121821;border:1px solid var(--line);border-radius:10px;padding:10px;margin:8px 0}
+    details[open]{background:#131b24}
+    summary{cursor:pointer;font-weight:600}
+    footer{border-top:1px solid var(--line);color:var(--muted);padding:22px 0;text-align:center}
   </style>
 </head>
 <body>
 
-<header>
-  <h1 id="title">Go_ESIM 🌍 Интернет без роуминга</h1>
-  <nav>
-    <a href="#main" id="nav-home">Главная</a>
-    <a href="#faq" id="nav-faq">FAQ</a>
-    <a href="https://t.me/Go_ESIM" target="_blank" id="nav-tg">Telegram</a>
-    <span class="lang-switch">
+  <!-- topbar -->
+  <div class="topbar">
+    <div class="container top-inner">
+      <a href="https://t.me/Go_ESIM" id="tg-top">Telegram</a>
       <span class="chip active" id="btn-ru">RU</span>
       <span class="chip" id="btn-en">EN</span>
-    </span>
-  </nav>
-</header>
+    </div>
+  </div>
 
-<section id="main" class="card">
-  <h2 id="h2-what">Что такое eSIM?</h2>
-  <p id="p-what">
-    eSIM — это виртуальная SIM-карта, которая устанавливается за 1 минуту и работает в 200+ странах.
-    Без пластика, без поиска салонов связи. QR-код приходит сразу на email.
-  </p>
-  <a href="https://www.simoptions.com/?utm_medium=wpam_id_866" class="btn" id="btn-buy">Купить eSIM</a>
-</section>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="logo" aria-hidden="true"></div>
+      <h1 id="hero-title">Go_ESIM 🌍 Интернет без роуминга</h1>
+      <p class="tagline" id="hero-tag">eSIM — виртуальная SIM-карта. Установка за 1 минуту, работает в 200+ странах.</p>
+      <div>
+        <!-- кнопка на твою партнёрку -->
+        <a class="btn" href="https://www.simoptions.com/?utm_medium=wpam_id_866" id="buy-top">Купить eSIM</a>
+        <a class="btn btn-outline" href="https://t.me/Go_ESIM" id="tg-hero">Telegram</a>
+      </div>
+    </div>
+  </header>
 
-<section class="card">
-  <h2 id="h2-why">Почему именно Go_ESIM?</h2>
-  <ul id="ul-why">
-    <li>✅ Подключение за 1 минуту</li>
-    <li>✅ Работает в 200+ странах</li>
-    <li>✅ Совместимо с iPhone, Samsung, Pixel, Huawei</li>
-    <li>✅ Идеально для туристов и digital nomads</li>
-  </ul>
-  <a href="https://www.simoptions.com/?utm_medium=wpam_id_866" class="btn" id="btn-buy2">Купить eSIM</a>
-</section>
+  <main class="container">
+    <section class="card">
+      <h2 id="what-h2">Что такое eSIM?</h2>
+      <p id="what-p">
+        eSIM — это виртуальная SIM-карта. Никакого пластика: вы получаете QR-код на email, сканируете в настройках телефона и
+        выходите онлайн за минуту. Идеально для поездок без переплаты за роуминг.
+      </p>
+      <a class="btn" href="https://www.simoptions.com/?utm_medium=wpam_id_866" id="buy-1">Купить eSIM</a>
+    </section>
 
-<section id="faq" class="card">
-  <h2>FAQ</h2>
-  <p id="faq1"><b>Как я получу eSIM?</b> — QR-код придёт на email сразу после оплаты.</p>
-  <p id="faq2"><b>Можно ли оставить WhatsApp?</b> — Да, номер WhatsApp не изменится.</p>
-  <p id="faq3"><b>Когда активировать?</b> — В любое время, обычно прямо по прилёту.</p>
-</section>
+    <section class="card">
+      <h2 id="why-h2">Почему Go_ESIM</h2>
+      <ul id="why-ul">
+        <li>⚡ Подключение за 1 минуту</li>
+        <li>🌍 Работает в 200+ странах</li>
+        <li>📱 Совместимо с iPhone, Samsung, Pixel, Huawei</li>
+        <li>💼 Удобно для туристов и digital nomads</li>
+      </ul>
+      <a class="btn" href="https://www.simoptions.com/?utm_medium=wpam_id_866" id="buy-2">Купить eSIM</a>
+    </section>
 
-<footer>
-  © 2025 Go_ESIM. All rights reserved.
-</footer>
+    <section class="card">
+      <h2>FAQ</h2>
+      <details>
+        <summary id="q1">Как я получу eSIM?</summary>
+        <p id="a1">QR-код придёт на email сразу после оплаты. Установить можно заранее.</p>
+      </details>
+      <details>
+        <summary id="q2">Сохранится ли мой WhatsApp номер?</summary>
+        <p id="a2">Да. eSIM добавляет интернет-пакет, ваш WhatsApp номер остаётся прежним.</p>
+      </details>
+      <details>
+        <summary id="q3">Когда лучше активировать?</summary>
+        <p id="a3">Обычно в день поездки/по прилёту — тогда начнётся расход пакета.</p>
+      </details>
+    </section>
+  </main>
 
-<script>
-  const langData = {
-    ru: {
-      title: "Go_ESIM 🌍 Интернет без роуминга",
-      "nav-home": "Главная",
-      "nav-faq": "FAQ",
-      "nav-tg": "Telegram",
-      "h2-what": "Что такое eSIM?",
-      "p-what": "eSIM — это виртуальная SIM-карта, которая устанавливается за 1 минуту и работает в 200+ странах. Без пластика, без поиска салонов связи. QR-код приходит сразу на email.",
-      "btn-buy": "Купить eSIM",
-      "h2-why": "Почему именно Go_ESIM?",
-      "ul-why": "<li>✅ Подключение за 1 минуту</li><li>✅ Работает в 200+ странах</li><li>✅ Совместимо с iPhone, Samsung, Pixel, Huawei</li><li>✅ Идеально для туристов и digital nomads</li>",
-      "btn-buy2": "Купить eSIM",
-      "faq1": "<b>Как я получу eSIM?</b> — QR-код придёт на email сразу после оплаты.",
-      "faq2": "<b>Можно ли оставить WhatsApp?</b> — Да, номер WhatsApp не изменится.",
-      "faq3": "<b>Когда активировать?</b> — В любое время, обычно прямо по прилёту."
-    },
-    en: {
-      title: "Go_ESIM 🌍 Internet Without Roaming",
-      "nav-home": "Home",
-      "nav-faq": "FAQ",
-      "nav-tg": "Telegram",
-      "h2-what": "What is eSIM?",
-      "p-what": "eSIM is a virtual SIM card that installs in 1 minute and works in 200+ countries. No plastic, no store visits. QR code is delivered instantly via email.",
-      "btn-buy": "Buy eSIM",
-      "h2-why": "Why Go_ESIM?",
-      "ul-why": "<li>✅ Instant activation in 1 minute</li><li>✅ Works in 200+ countries</li><li>✅ Compatible with iPhone, Samsung, Pixel, Huawei</li><li>✅ Perfect for travelers & digital nomads</li>",
-      "btn-buy2": "Buy eSIM",
-      "faq1": "<b>How will I receive my eSIM?</b> — You’ll get a QR code instantly by email after payment.",
-      "faq2": "<b>Can I keep my WhatsApp number?</b> — Yes, your WhatsApp number will remain the same.",
-      "faq3": "<b>When should I activate?</b> — Anytime, usually right after landing."
-    }
-  };
+  <footer>
+    <div class="container">© 2025 Go_ESIM. All rights reserved.</div>
+  </footer>
 
-  const btnRu = document.getElementById("btn-ru");
-  const btnEn = document.getElementById("btn-en");
+  <!-- мини i18n -->
+  <script>
+    const RU = {
+      "hero-title":"Go_ESIM 🌍 Интернет без роуминга",
+      "hero-tag":"eSIM — виртуальная SIM-карта. Установка за 1 минуту, работает в 200+ странах.",
+      "buy-top":"Купить eSIM","tg-hero":"Telegram",
+      "what-h2":"Что такое eSIM?","what-p":"eSIM — это виртуальная SIM-карта. Никакого пластика: вы получаете QR-код на email, сканируете в настройках телефона и выходите онлайн за минуту. Идеально для поездок без переплаты за роуминг.",
+      "why-h2":"Почему Go_ESIM",
+      "why-ul":"<li>⚡ Подключение за 1 минуту</li><li>🌍 Работает в 200+ странах</li><li>📱 Совместимо с iPhone, Samsung, Pixel, Huawei</li><li>💼 Удобно для туристов и digital nomads</li>",
+      "q1":"Как я получу eSIM?","a1":"QR-код придёт на email сразу после оплаты. Установить можно заранее.",
+      "q2":"Сохранится ли мой WhatsApp номер?","a2":"Да. eSIM добавляет интернет-пакет, ваш WhatsApp номер остаётся прежним.",
+      "q3":"Когда лучше активировать?","a3":"Обычно в день поездки/по прилёту — тогда начнётся расход пакета.",
+      "buy-1":"Купить eSIM","buy-2":"Купить eSIM"
+    };
+    const EN = {
+      "hero-title":"Go_ESIM 🌍 Roaming-free Internet",
+      "hero-tag":"eSIM is a virtual SIM. Install in 1 minute, works in 200+ countries.",
+      "buy-top":"Buy eSIM","tg-hero":"Telegram",
+      "what-h2":"What is eSIM?","what-p":"eSIM is a virtual SIM card. No plastic: you get a QR by email, scan it in phone settings and go online in a minute. Perfect for travel without roaming fees.",
+      "why-h2":"Why Go_ESIM",
+      "why-ul":"<li>⚡ Instant 1-minute activation</li><li>🌍 Works in 200+ countries</li><li>📱 Compatible with iPhone, Samsung, Pixel, Huawei</li><li>💼 Great for travelers & digital nomads</li>",
+      "q1":"How will I receive my eSIM?","a1":"You’ll get a QR code by email right after payment. You can install in advance.",
+      "q2":"Will my WhatsApp number stay?","a2":"Yes. eSIM adds data only — your WhatsApp number remains the same.",
+      "q3":"When should I activate?","a3":"Usually on the travel day / upon arrival so the plan starts then.",
+      "buy-1":"Buy eSIM","buy-2":"Buy eSIM"
+    };
 
-  function setLang(lang) {
-    const data = langData[lang];
-    for (let id in data) {
-      const el = document.getElementById(id);
-      if (el) {
-        if (el.tagName === "UL" || el.tagName === "P") {
-          el.innerHTML = data[id];
-        } else {
-          el.textContent = data[id];
-        }
+    const els = {
+      "hero-title":document.getElementById("hero-title"),
+      "hero-tag":document.getElementById("hero-tag"),
+      "buy-top":document.getElementById("buy-top"),
+      "tg-hero":document.getElementById("tg-hero"),
+      "what-h2":document.getElementById("what-h2"),
+      "what-p":document.getElementById("what-p"),
+      "why-h2":document.getElementById("why-h2"),
+      "why-ul":document.getElementById("why-ul"),
+      "q1":document.getElementById("q1"), "a1":document.getElementById("a1"),
+      "q2":document.getElementById("q2"), "a2":document.getElementById("a2"),
+      "q3":document.getElementById("q3"), "a3":document.getElementById("a3"),
+      "buy-1":document.getElementById("buy-1"), "buy-2":document.getElementById("buy-2")
+    };
+    const btnRU = document.getElementById("btn-ru");
+    const btnEN = document.getElementById("btn-en");
+
+    function setLang(dict){
+      for(const k in dict){
+        if(!els[k]) continue;
+        if(k==="why-ul") els[k].innerHTML = dict[k];
+        else els[k].textContent = dict[k];
       }
+      document.documentElement.lang = (dict===EN) ? "en" : "ru";
+      btnRU.classList.toggle("active", dict!==EN);
+      btnEN.classList.toggle("active", dict===EN);
     }
-    document.documentElement.lang = lang;
-    btnRu.classList.toggle("active", lang === "ru");
-    btnEn.classList.toggle("active", lang === "en");
-  }
 
-  btnRu.addEventListener("click", () => setLang("ru"));
-  btnEn.addEventListener("click", () => setLang("en"));
+    btnRU.addEventListener("click", ()=>setLang(RU));
+    btnEN.addEventListener("click", ()=>setLang(EN));
 
-  // Автоопределение языка браузера
-  if (navigator.language.toLowerCase().startsWith("en")) {
-    setLang("en");
-  } else {
-    setLang("ru");
-  }
-</script>
-
+    // авто-язык
+    if(navigator.language && navigator.language.toLowerCase().startsWith("en")) setLang(EN);
+    else setLang(RU);
+  </script>
 </body>
 </html>
