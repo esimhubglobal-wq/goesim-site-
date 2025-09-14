@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Go_ESIM 🌍 Интернет без роуминга</title>
   <meta name="description" content="Купить eSIM онлайн. Установка за 1 минуту, работает в 200+ странах. Совместимо с iPhone, Samsung, Pixel, Huawei." />
-  <meta property="og:title" content="Go_ESIM — интернет без роуминга" />
-  <meta property="og:description" content="Установи eSIM за 1 минуту и пользуйся интернетом в 200+ странах." />
-  <meta property="og:type" content="website" />
   <link rel="icon" href="favicon.ico" />
   <style>
     :root{
@@ -20,57 +17,55 @@
     body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto;color:var(--ink);background:var(--bg)}
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--maxw);margin:0 auto;padding:0 16px}
-    /* topbar */
+
+    /* Topbar (только языки справа) */
     .topbar{position:sticky;top:0;z-index:20;background:rgba(15,18,22,.75);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-    .top{display:flex;justify-content:space-between;align-items:center;padding:10px 0}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .logo{width:34px;height:34px;border-radius:8px;background:#0c1015 url('favicon.ico') center/20px no-repeat;border:1px solid var(--line)}
-    .nav{display:flex;gap:12px;align-items:center}
-    .chip{padding:6px 10px;border:1px solid var(--line);border-radius:10px;color:var(--muted)}
+    .top{display:flex;justify-content:flex-end;gap:10px;align-items:center;padding:10px 0}
+    .chip{padding:6px 10px;border:1px solid var(--line);border-radius:10px;color:var(--muted);cursor:pointer;background:transparent}
     .chip.active{background:#1a222d;color:var(--ink)}
-    /* hero */
-    .hero{border-bottom:1px solid var(--line);background:
+
+    /* Hero */
+    .hero{border-bottom:1px solid var(--line);text-align:center;background:
       radial-gradient(1200px 600px at 80% -20%, rgba(0,200,83,.12), transparent 60%),
       radial-gradient(1000px 500px at -10% -20%, rgba(97,218,251,.10), transparent 60%),
       linear-gradient(180deg,#121721 0%,#0f1216 60%)}
-    .hero-inner{padding:56px 0 42px;text-align:center}
+    .hero-inner{padding:56px 0 42px}
+    .hero-logo{width:88px;height:88px;margin:0 auto 16px;border-radius:50%;background:#0c1015;border:1px solid var(--line);box-shadow:var(--sh);position:relative}
+    .hero-logo::before{content:"";position:absolute;inset:0;display:block;margin:auto;width:46px;height:46px;border-radius:8px;background:var(--brand);box-shadow:inset 0 0 0 1px rgba(0,0,0,.35)}
     h1{margin:10px 0 10px;font-size:40px}
     .tag{margin:0 0 20px;color:var(--muted);font-size:18px}
     .btn{display:inline-block;padding:14px 26px;font-weight:700;border-radius:12px;border:0;color:#04140a;background:var(--brand);box-shadow:var(--sh);transition:.15s}
     .btn:hover{background:var(--brand-h)}
     .btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-    /* sections */
+
+    /* Sections */
     main{padding:34px 0 64px}
     .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;margin:18px 0;box-shadow:var(--sh)}
     h2{margin:0 0 12px;font-size:22px}
     ul{margin:0;padding-left:20px}
-    /* footer */
+
+    /* Кнопка слева только в блоке "Почему" */
+    .btns-left{justify-content:flex-start}
+
+    /* Footer */
     footer{border-top:1px solid var(--line);color:var(--muted);padding:22px 0;text-align:center}
-    /* mobile */
-    @media (max-width:760px){
-      h1{font-size:32px}
-    }
+
+    @media (max-width:760px){ h1{font-size:32px} }
   </style>
 </head>
 <body>
-  <!-- TOPBAR -->
+  <!-- TOPBAR: только RU/EN -->
   <div class="topbar">
     <div class="container top">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <span>Go_ESIM</span>
-      </div>
-      <div class="nav">
-        <a href="#faq" class="chip" id="nav-faq">FAQ</a>
-        <button class="chip active" id="lang-ru" type="button">RU</button>
-        <button class="chip" id="lang-en" type="button">EN</button>
-      </div>
+      <button class="chip active" data-lang="ru" type="button">RU</button>
+      <button class="chip" data-lang="en" type="button">EN</button>
     </div>
   </div>
 
   <!-- HERO -->
   <header class="hero">
     <div class="container hero-inner">
+      <div class="hero-logo" aria-hidden="true"></div>
       <h1 id="hero-title">Интернет без роуминга</h1>
       <p class="tag" id="hero-tag">eSIM — виртуальная SIM-карта. Установка за 1 минуту, работает в 200+ странах.</p>
       <div class="btns">
@@ -80,7 +75,7 @@
   </header>
 
   <main class="container">
-    <!-- WHAT IS ESIM -->
+    <!-- Что такое eSIM -->
     <section class="card">
       <h2 id="what-h2">Что такое eSIM?</h2>
       <p id="what-txt">
@@ -91,7 +86,7 @@
       <a class="btn" id="buy-1" href="https://www.simoptions.com/?utm_medium=wpam_id_866">Купить eSIM</a>
     </section>
 
-    <!-- WHY GO_ESIM -->
+    <!-- Почему Go_ESIM -->
     <section class="card">
       <h2 id="why-h2">Почему Go_ESIM</h2>
       <ul id="why-ul">
@@ -100,9 +95,9 @@
         <li>📱 Совместимо с iPhone, Samsung, Pixel, Huawei</li>
         <li>💼 Удобно для туристов и digital nomads</li>
       </ul>
-      <div class="btns">
-        <!-- ЗАМЕНА: тут теперь кнопка в Telegram -->
-        <a class="btn" id="btn-connect" href="https://t.me/Go_ESIM">Подключить eSIM</a>
+      <div class="btns btns-left">
+        <!-- ОДНА кнопка слева: в Telegram -->
+        <a class="btn" id="btn-connect" href="https://t.me/Go_ESIM" target="_blank" rel="noopener">Подключить eSIM</a>
       </div>
     </section>
 
@@ -119,9 +114,9 @@
     <div class="container">© 2025 Go_ESIM. All rights reserved.</div>
   </footer>
 
-  <!-- LANG SWITCH -->
+  <!-- Языки -->
   <script>
-    const t = {
+    const T = {
       ru:{
         heroTitle:'Интернет без роуминга',
         heroTag:'eSIM — виртуальная SIM-карта. Установка за 1 минуту, работает в 200+ странах.',
@@ -133,8 +128,7 @@
         connect:'Подключить eSIM',
         faq1:'<b>Как я получу eSIM?</b> — QR-код придёт на email сразу после оплаты.',
         faq2:'<b>Можно ли оставить WhatsApp?</b> — Да, номер WhatsApp не изменится.',
-        faq3:'<b>Когда активировать?</b> — В день поездки / по прилёту, чтобы пакет расходовался в поездке.',
-        navFaq:'FAQ'
+        faq3:'<b>Когда активировать?</b> — В день поездки / по прилёту, чтобы пакет расходовался в поездке.'
       },
       en:{
         heroTitle:'Roaming-free internet',
@@ -147,47 +141,40 @@
         connect:'Get help to install',
         faq1:'<b>How do I receive my eSIM?</b> — A QR code is emailed right after payment.',
         faq2:'<b>Can I keep my WhatsApp number?</b> — Yes, your WhatsApp number stays the same.',
-        faq3:'<b>When should I activate?</b> — On the travel day / upon arrival so the plan starts in trip.',
-        navFaq:'FAQ'
+        faq3:'<b>When should I activate?</b> — On the travel day / upon arrival so the plan starts in trip.'
       }
     };
 
-    const el = id => document.getElementById(id);
-    const langRU = el('lang-ru'), langEN = el('lang-en');
+    const $ = id => document.getElementById(id);
+    const apply = (lang) => {
+      const L = T[lang];
+      $('hero-title').textContent = L.heroTitle;
+      $('hero-tag').textContent   = L.heroTag;
+      $('buy-hero').textContent   = L.buy;
+      $('what-h2').textContent    = L.whatH2;
+      $('what-txt').textContent   = L.whatTxt;
+      $('buy-1').textContent      = L.buy;
+      $('why-h2').textContent     = L.whyH2;
+      $('btn-connect').textContent= L.connect;
+      $('faq-1').innerHTML        = L.faq1;
+      $('faq-2').innerHTML        = L.faq2;
+      $('faq-3').innerHTML        = L.faq3;
 
-    function apply(lang){
-      const L = t[lang];
-      el('hero-title').textContent = L.heroTitle;
-      el('hero-tag').textContent = L.heroTag;
-      el('buy-hero').textContent = L.buy;
-      el('what-h2').textContent = L.whatH2;
-      el('what-txt').textContent = L.whatTxt;
-      el('buy-1').textContent = L.buy;
-      el('why-h2').textContent = L.whyH2;
-      el('btn-connect').textContent = L.connect;
-      el('faq-1').innerHTML = L.faq1;
-      el('faq-2').innerHTML = L.faq2;
-      el('faq-3').innerHTML = L.faq3;
-      document.getElementById('nav-faq').textContent = L.navFaq;
+      // список «Почему»
+      const ul = document.getElementById('why-ul'); ul.innerHTML='';
+      L.whyList.forEach(item=>{ const li=document.createElement('li'); li.textContent=item; ul.appendChild(li); });
 
-      const ul = document.getElementById('why-ul');
-      ul.innerHTML = '';
-      L.whyList.forEach(item=>{
-        const li = document.createElement('li'); li.textContent = item; ul.appendChild(li);
-      });
+      document.documentElement.lang = (lang==='en'?'en':'ru');
+      document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active', c.dataset.lang===lang));
+    };
 
-      document.documentElement.lang = lang === 'ru' ? 'ru' : 'en';
-      langRU.classList.toggle('active', lang==='ru');
-      langEN.classList.toggle('active', lang==='en');
-    }
+    // переключатели
+    document.querySelectorAll('.chip[data-lang]').forEach(btn=>{
+      btn.addEventListener('click', e => apply(e.currentTarget.dataset.lang));
+    });
 
-    langRU.addEventListener('click', ()=>apply('ru'));
-    langEN.addEventListener('click', ()=>apply('en'));
-
-    // Автоязык по хэшу ?lang=en|ru или по браузеру
-    const q = new URLSearchParams(location.search).get('lang');
-    if(q==='en'||q==='ru'){ apply(q); }
-    else { apply((navigator.language||'ru').startsWith('en')?'en':'ru'); }
+    // старт: RU по умолчанию
+    apply('ru');
   </script>
 </body>
 </html>
