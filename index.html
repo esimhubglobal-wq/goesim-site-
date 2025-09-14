@@ -1,180 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Go_ESIM 🌍 — Internet in 1 Minute</title>
-
-  <!-- Basic SEO -->
-  <meta name="description" content="Go_ESIM — buy and install eSIM in 1 minute. Works in 200+ countries.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Купить eSIM 🌍 Интернет без роуминга для путешествий | Go_ESIM</title>
+  <meta name="description" content="Купи eSIM за 1 минуту. Интернет без роуминга в 200+ странах. Работает на iPhone, Samsung, Pixel. Идеально для туристов и digital nomads.">
   <link rel="icon" href="favicon.ico">
-
-  <!-- Social Preview (uses your existing og_image.png in the repo) -->
-  <meta property="og:title" content="Go_ESIM 🌍 — Internet in 1 Minute">
-  <meta property="og:description" content="Buy and install eSIM in 1 minute. 200+ countries.">
-  <meta property="og:image" content="og_image.png">
-  <meta property="og:type" content="website">
-
-  <!-- One-file CSS -->
+  <link rel="canonical" href="https://esimhubglobal-wq.github.io/">
   <style>
-    :root{
-      --bg:#0f1216;
-      --ink:#e7eef7;
-      --muted:#a5b5c8;
-      --card:#151a21;
-      --line:#202833;
-      --brand:#00c853;
-      --brand-hover:#00a344;
-      --link:#61dafb;
-      --maxw:980px;
-      --radius:14px;
-      --shadow:0 8px 26px rgba(0,0,0,.22);
-    }
+    :root{--bg:#0f1216;--ink:#e7eef7;--card:#151a21;--line:#202833;--brand:#00c853;--brandh:#00a344;--maxw:980px;--radius:12px}
     *{box-sizing:border-box}
-    html,body{margin:0}
-    body{
-      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
-      color:var(--ink);
-      background:var(--bg);
-    }
-    a{color:var(--link); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
-    /* ---------- HERO ---------- */
-    .hero{
-      position:relative; overflow:hidden;
-      border-bottom:1px solid var(--line);
-      background:
-        radial-gradient(1200px 600px at 80% -20%, rgba(0,200,83,.15), transparent 60%),
-        radial-gradient(1000px 500px at -10% -10%, rgba(97,218,251,.12), transparent 55%),
-        linear-gradient(180deg, #121721 0%, transparent 60%);
-    }
-    .hero-inner{padding:56px 0 34px; text-align:center}
-    .logo{
-      width:72px; height:72px; border-radius:50%;
-      background:#0c1015 url('favicon.ico') center/60% no-repeat;
-      border:1px solid var(--line); box-shadow:var(--shadow);
-      margin:0 auto 14px;
-    }
-    h1{margin:6px 0 8px; font-size:40px; letter-spacing:.2px}
-    .tagline{margin:0 0 18px; color:var(--muted)}
-    .btn{
-      display:inline-block; border:0; border-radius:12px;
-      padding:14px 26px; font-weight:700; color:#fff;
-      background:var(--brand); box-shadow:0 12px 28px rgba(0,200,83,.18);
-      transition:.15s ease-in-out; text-decoration:none;
-    }
-    .btn:hover{background:var(--brand-hover); transform:translateY(-1px)}
-    .btn-outline{
-      background:transparent; color:var(--ink); border:1px solid var(--line);
-      box-shadow:none; margin-left:10px;
-    }
-    .btn-outline:hover{border-color:#2a3442}
-
-    /* ---------- SECTIONS ---------- */
-    main{padding:34px 0 64px}
-    .card{
-      background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
-      padding:22px 22px; margin:18px 0; box-shadow:var(--shadow);
-    }
-    h2{margin:0 0 12px; font-size:22px}
-    ol{margin:0 0 12px; padding-left:20px}
-    ul{margin:0; padding-left:20px}
-    .columns{columns:2; column-gap:28px}
-    @media (max-width:760px){ .columns{columns:1} }
-
-    /* ---------- FAQ ---------- */
-    details{background:#121821; border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin:10px 0}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto}
+    a{color:#61dafb}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 18px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin:16px 0}
+    h1{font-size:28px;margin:12px 0} h2{font-size:22px;margin:12px 0}
+    .btn{display:inline-block;padding:12px 20px;background:var(--brand);border:0;border-radius:10px;color:#03140a;font-weight:700;text-decoration:none}
+    .btn:hover{background:var(--brandh)}
+    nav{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:10px auto 0;padding:8px 12px;max-width:var(--maxw);background:#151a21;border:1px solid #202833;border-radius:10px}
+    details{background:#121821;border:1px solid #202833;border-radius:8px;padding:10px;margin:6px 0}
     details[open]{background:#131b24}
-    summary{cursor:pointer; font-weight:600; list-style:none}
-    summary::-webkit-details-marker{display:none}
-
-    /* ---------- FOOTER ---------- */
-    footer{border-top:1px solid var(--line); color:var(--muted); text-align:center; padding:22px 0}
+    summary{cursor:pointer;font-weight:600}
   </style>
 </head>
 <body>
-  <!-- HERO -->
-  <header class="hero">
-    <div class="container hero-inner">
-      <!-- put your own logo instead of favicon.ico if you want -->
-      <div class="logo" aria-hidden="true"></div>
-      <h1>Go_ESIM 🌍</h1>
-      <p class="tagline">Internet in 1 Minute | Интернет за 1 минуту</p>
-      <div>
-        <a class="btn" href="https://www.simoptions.com/?utm_medium=wpam_id_866" target="_blank" rel="noopener">Buy eSIM</a>
-        <a class="btn btn-outline" href="https://t.me/Go_ESIM" target="_blank" rel="noopener">Telegram</a>
-      </div>
+  <nav>
+    <a href="#main">Главная</a>
+    <a href="#prague">eSIM Прага / Чехия</a>
+    <a href="#europe">eSIM Европа</a>
+    <a href="#usa">eSIM США</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <div class="wrap" id="main">
+    <div class="card">
+      <h1>Go_ESIM 🌍 Интернет без роуминга</h1>
+      <p><strong>eSIM</strong> — это виртуальная SIM-карта, которая устанавливается за 1 минуту и работает в 200+ странах. Без пластика, без поиска салонов связи. QR-код приходит сразу на email.</p>
+      <p><a class="btn" href="https://www.simoptions.com/?utm_medium=wpam_id_866">Купить eSIM (SimOptions)</a></p>
     </div>
-  </header>
+  </div>
 
-  <main class="container">
-    <!-- What is eSIM -->
-    <section class="card">
-      <h2>❓ What is eSIM?</h2>
-      <p>
-        🇬🇧 eSIM is a virtual SIM card — no plastic, installs in 1 minute, works in 200+ countries.<br>
-        🇷🇺 eSIM — виртуальная SIM-карта. Без пластика, установка за 1 минуту, работает в 200+ странах.
-      </p>
-    </section>
-
-    <!-- How to Buy -->
-    <section class="card">
-      <h2>🛒 How to Buy</h2>
-      <ol>
-        <li>Choose country & plan | Выбери страну и тариф</li>
-        <li>Pay online 💳 | Оплати онлайн 💳</li>
-        <li>Receive QR by email ✉️ | Получи QR на почту ✉️</li>
-      </ol>
-      <a class="btn" href="https://www.simoptions.com/?utm_medium=wpam_id_866" target="_blank" rel="noopener">Buy eSIM</a>
-    </section>
-
-    <!-- Supported Phones -->
-    <section class="card">
-      <h2>📱 Supported Phones</h2>
-      <ul class="columns">
-        <li>iPhone XS and newer</li>
-        <li>Samsung Galaxy S20+, Z Flip/Fold, Note 20+</li>
-        <li>Google Pixel 3+</li>
-        <li>Huawei P40, Mate 40 Pro</li>
+  <!-- Prague -->
+  <div class="wrap" id="prague">
+    <div class="card">
+      <h2>Купить eSIM в Праге и Чехии 🇨🇿</h2>
+      <p>Путешествуете в Чехию и не хотите переплачивать за роуминг? Решение — <strong>eSIM для Праги и всей Чехии</strong>. Установка за 1 минуту, интернет без роуминга, работает на iPhone, Samsung, Pixel.</p>
+      <ul>
+        <li>📲 Без пластика — QR приходит на email</li>
+        <li>⚡ Активация за 1 минуту</li>
+        <li>🌍 Локальные и европейские пакеты</li>
+        <li>✅ Совместимо с iPhone XS+, Galaxy S20+, Pixel 3+, Huawei P40, Mate 40 Pro</li>
       </ul>
-    </section>
+      <p><a class="btn" href="https://www.simoptions.com/?utm_medium=wpam_id_866">Купить eSIM Чехия</a></p>
+    </div>
+  </div>
 
-    <!-- Channels -->
-    <section class="card">
-      <h2>🔗 Channels & Communities</h2>
-      <p>👉 <a href="https://t.me/Go_ESIM" target="_blank" rel="noopener">Telegram: Go_ESIM</a></p>
-    </section>
+  <!-- Europe -->
+  <div class="wrap" id="europe">
+    <div class="card">
+      <h2>eSIM для Европы 🌍 — интернет без роуминга</h2>
+      <p><strong>eSIM для Европы</strong> покрывает 30+ стран, удобно для туров по нескольким направлениям: Италия, Франция, Германия, Испания, Чехия и др.</p>
+      <ol>
+        <li>Выберите европейский план</li>
+        <li>Оплатите онлайн 💳</li>
+        <li>Получите QR по email и установите</li>
+      </ol>
+      <p><a class="btn" href="https://www.simoptions.com/?utm_medium=wpam_id_866">Купить eSIM Европа</a></p>
+    </div>
+  </div>
 
-    <!-- FAQ -->
-    <section class="card">
-      <h2>💬 FAQ</h2>
+  <!-- USA -->
+  <div class="wrap" id="usa">
+    <div class="card">
+      <h2>eSIM в США 🇺🇸 — интернет для туристов</h2>
+      <p><strong>eSIM для США</strong> даёт стабильный интернет без дорогого роуминга. Подойдёт для поездок в Нью-Йорк, Лос-Анджелес, Майами и любые штаты.</p>
+      <ul>
+        <li>Поддержка iPhone и Android</li>
+        <li>Гибкие пакеты данных</li>
+        <li>Моментная активация по QR</li>
+      </ul>
+      <p><a class="btn" href="https://www.simoptions.com/?utm_medium=wpam_id_866">Купить eSIM США</a></p>
+    </div>
+  </div>
 
-      <details>
-        <summary>How do I install an eSIM?</summary>
-        <p>After purchase you’ll receive a QR to email. On the phone: Settings → Mobile/Cellular → Add eSIM → Scan QR → Done.</p>
-      </details>
-
-      <details>
-        <summary>Can I keep my WhatsApp number?</summary>
-        <p>Yes. eSIM adds data without changing your WhatsApp number. Keep your physical SIM for calls/SMS if needed.</p>
-      </details>
-
-      <details>
-        <summary>When should I activate it?</summary>
-        <p>Install anytime, but switch it on the day you travel (or when you need data) to start the plan period.</p>
-      </details>
-
-      <details>
-        <summary>Refunds / doesn’t work?</summary>
-        <p>If data doesn’t start, restart the phone and enable data roaming for the new eSIM. Still no luck — contact support of the store from your receipt.</p>
-      </details>
-    </section>
-  </main>
+  <!-- FAQ -->
+  <div class="wrap" id="faq">
+    <div class="card">
+      <h2>FAQ — Частые вопросы</h2>
+      <details><summary>Будет ли работать WhatsApp с моим номером?</summary><p>Да. eSIM добавляет только интернет-пакет. Номер WhatsApp остаётся прежним.</p></details>
+      <details><summary>Когда активировать eSIM?</summary><p>Установить можно заранее, а переключить в день поездки — чтобы пакет начал списываться в нужный момент.</p></details>
+      <details><summary>Можно ли использовать вместе с моей физической SIM?</summary><p>Да, современные телефоны поддерживают одновременную работу eSIM и вашей основной SIM.</p></details>
+      <details><summary>Как установить eSIM?</summary><p>После покупки вы получите QR.  
+      <br>📱 iPhone: Настройки → Сотовая связь → Добавить eSIM  
+      <br>📱 Android: Настройки → SIM-карты → Добавить eSIM</p></details>
+    </div>
+  </div>
 
   <footer>
-    <div class="container">
-      <p>© 2025 Go_ESIM. All rights reserved.</p>
+    <div class="wrap">
+      <p>© 2025 Go_ESIM. Все права защищены.</p>
     </div>
   </footer>
 </body>
